@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.portfolio-container {
+    position: relative;
+    width: 90%; /* Mengurangi lebar untuk tampilan mobile */
+    max-width: 1200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-wrapper {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.card-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    min-width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+.scroll-button:hover {
+    background-color: #0056b3;
+}
+
+/* Media Query untuk Tampilan Mobile */
+@media (max-width: 768px) {
+    .card {
+        min-width: 250px; /* Mengurangi lebar card untuk tampilan mobile */
+    }
+
+    .card img {
+        height: 180px; /* Sesuaikan tinggi gambar di ponsel */
+    }
+
+    .card h3 {
+        font-size: 20px; /* Sesuaikan ukuran font judul */
+    }
+
+    .card p {
+        font-size: 14px; /* Sesuaikan ukuran font deskripsi */
+    }
+
+    .scroll-button {
+        display: none; /* Sembunyikan tombol scroll pada layar di bawah 768px */
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-container {
+        width: 100%;
+    }
+
+    .card {
+        min-width: 220px; /* Lebih kecil untuk layar lebih kecil */
+    }
+
+    .card img {
+        height: 150px; /* Sesuaikan tinggi gambar untuk layar lebih kecil */
+    }
+
+    .scroll-button {
+        display: none; /* Sembunyikan tombol scroll pada layar yang lebih kecil */
+    }
+}
